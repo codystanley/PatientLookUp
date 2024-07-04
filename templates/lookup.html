@@ -13,18 +13,26 @@
     <form method="POST" action="{{ url_for('lookup_number') }}">
         {{ form.hidden_tag() }}
         <div class="row">
-            <div class="col-2 mx-1 form-floating">
+            <div class="col-2 form-floating">
                 {{ form.number(class_="form-control", id_="phoneInput", placeholder_="904-555-1212", pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}") }}
                 {{ form.number.label(class_="form-label", for_="phoneInput") }}
                 
             </div>
-            <div class="col-2 mx-1 form-floating">
+            <div class="col-2 form-floating">
                 {{ form.dob(class_="form-control", id_="dobInput", placeholder_="07/04/2024") }}
                 {{ form.dob.label(class_="form-label", for_="dobInput") }}
             </div>
-            <div class="col-2">
-                {{ form.lastName.label }}<br>
-                {{ form.lastName(size=32) }}<br>
+            <div class="col-2 form-floating">
+                {{ form.gender(class_="form-control", id_="genderInput", placeholder_="07/04/2024") }}
+                {{ form.gender.label(class_="form-label", for_="genderInput") }}
+            </div>
+            <div class="col-3 form-floating">
+                {{ form.lastName(class_="form-control", id_="lastNameInput", placeholder_="Last Name") }}
+                {{ form.lastName.label(class_="form-label", for_="lastNameInput") }}
+            </div>
+            <div class="col-3 form-floating">
+                {{ form.firstName(class_="form-control", id_="firstNameInput", placeholder_="First Name") }}
+                {{ form.firstName.label(class_="form-label", for_="firstNameInput") }}
             </div>
                 
                 <input type="submit" value="Submit">
